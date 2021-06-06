@@ -220,10 +220,15 @@ public class windows extends JFrame{
     }
     public static void main(String[] args) throws IOException, InterruptedException {
         // args[0[ and args[1] have to be bigger than 4
-        int height = Integer.valueOf(args[0]);
-        int width = Integer.valueOf(args[1]);
-
-
+        int height = 0;
+        int width = 0;
+        if (args[0] == null || args[1] == null) {
+            height = 10;
+            width = 10;
+        } else {
+            height = Integer.valueOf(args[0]);
+            width = Integer.valueOf(args[1]);
+        }
         Player player = new Player(height - 1, width / 2);
         windows window = new windows(height, width ,player);
         while (!window.gameOver) {
