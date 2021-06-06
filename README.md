@@ -7,4 +7,5 @@ $ java windows height width
 
 
 #Tips:
-The application may not work on Windows since I have windows sys to test it.
+1. The way to control player are typing 'a' to move player to left and typing 'd' to move player to right.
+2. The application may not work on Windows since I have not had windows sys to test it.
