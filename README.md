@@ -7,4 +7,4 @@ $ java windows height width
 
 
 #Tips:
-The application may not work on MacOX since clear terminal command line in shell doesn't work,
+The application may not work on Windows since I have windows sys to test it.
