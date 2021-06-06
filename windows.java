@@ -183,21 +183,11 @@ public class windows extends JFrame{
     }
 
     void cleanScreen() throws IOException, InterruptedException {
-        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
-//        try {
-//
-//            if (System.getProperty("os.name").contains("Windows")){
-//                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-//            }else {
-//                String[] command = {"clear"};
-//                ProcessBuilder processBuilder = new ProcessBuilder(command);
-//                processBuilder.directory(new File(System.getProperty("user.home")));
-//                processBuilder.start();
-//            }
-//        } catch (IOException | InterruptedException ex) {
-//            ex.printStackTrace();
-//        }
+        Thread.sleep(1000);
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+
     }
     //constructor
     public windows(int height, int width, Player player) {
@@ -234,7 +224,7 @@ public class windows extends JFrame{
         while (!window.gameOver) {
             window.cleanScreen();
             window.update();
-            Thread.sleep(7000);
+            Thread.sleep(700);
             window.render();
             window.speed = window.updateSpeed();
         }
