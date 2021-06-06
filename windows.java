@@ -75,7 +75,7 @@ class Player {
 }
 
 
-public class windows extends JFrame {
+public class windows extends JFrame{
     public Random random;
     public char[][] board;
     public int score = 0;
@@ -156,7 +156,7 @@ public class windows extends JFrame {
             player.render(board);
         }
     }
-    public int updateSpeed(int score) throws InterruptedException {
+    public int updateSpeed() throws InterruptedException {
         if((270 - this.score)>100) {
             Thread.sleep(270 - this.score);
             return (int) (this.score /(1.7));
@@ -231,7 +231,9 @@ public class windows extends JFrame {
             window.update();
             Thread.sleep(7000);
             window.render();
-            window.speed = window.updateSpeed(window.score);
+            window.speed = window.updateSpeed();
         }
     }
+
+
 }
